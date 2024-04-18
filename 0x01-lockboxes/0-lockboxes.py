@@ -4,6 +4,8 @@
 
 def canUnlockAll(boxes):
     """Method that determines if all the boxes can be opened."""
+    if not boxes:
+        return False
     newKeys = [0]
     for newKey in newKeys:
         for key in boxes[newKey]:
