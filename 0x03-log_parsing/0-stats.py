@@ -32,14 +32,8 @@ try:
     for line in sys.stdin:
         if not match(reg, line):
             continue
-        try:
-            file_size += int(line.split()[-1])
-        except Exception:
-                pass
-        try:
-            code = line.split()[-2]
-        except Exception:
-            pass
+        file_size += int(line.split()[-1])
+        code = line.split()[-2]
         counter += 1
         if code in codes_dict:
             codes_dict[code] += 1
