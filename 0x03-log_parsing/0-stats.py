@@ -17,7 +17,7 @@ codes_dict = {
 
 file_size = 0
 counter = 0
-reg = r'(\d+\.\d+\.\d+\.\d+) - \[.*\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)'
+regex = r'(.+)\s?-\s?\[.*\] "GET /projects/260 HTTP/1.1" (\w+) (\d+)'
 
 
 def print_stats():
@@ -30,7 +30,7 @@ def print_stats():
 
 try:
     for line in sys.stdin:
-        if not match(reg, line):
+        if not match(regex, line):
             continue
         file_size += int(line.split()[-1])
         code = line.split()[-2]
