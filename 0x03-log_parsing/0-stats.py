@@ -20,7 +20,7 @@ reg = r'(\d+\.\d+\.\d+\.\d+) - \[.*\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)'
 
 try:
     for line in sys.stdin:
-        if not match(regex, line):
+        if not match(reg, line):
             continue
         file_size += int(line.split()[-1])
         code = line.split()[-2]
