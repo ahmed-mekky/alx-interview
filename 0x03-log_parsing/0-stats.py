@@ -14,9 +14,15 @@ codes_dict = {
     "404": 0,
     "405": 0,
     "500": 0}
+
 file_size = 0
 counter = 0
 reg = r'(\d+\.\d+\.\d+\.\d+) - \[.*\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)'
+
+def print_stats():
+    print(f'File size: {file_size}')
+    for code in codes_dict.keys():
+        print(f'{code}: {codes_dict[code]}')
 
 try:
     for line in sys.stdin:
@@ -28,11 +34,7 @@ try:
         if code in codes_dict:
             codes_dict[code] += 1
             if (counter % 10 == 0 and counter != 0):
-                print(f'File size: {file_size}')
-                for code in codes_dict.keys():
-                    print(f'{code}: {codes_dict[code]}')
+                print_stats()
 except KeyboardInterrupt:
-    print(f'File size: {file_size}')
-    for code in codes_dict.keys():
-        print(f'{code}: {codes_dict[code]}')
+    print_stats()
     sys.exit(0)
