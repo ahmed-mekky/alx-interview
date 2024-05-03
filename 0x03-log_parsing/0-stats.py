@@ -3,7 +3,7 @@
 This script reads from standard input and computes metrics
 """
 import sys
-
+from re import match
 
 codes_dict = {
     "200": 0,
@@ -16,8 +16,11 @@ codes_dict = {
     "500": 0}
 file_size = 0
 counter = 0
+regex = r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \[([^]]+)\] "GET /projects/260 HTTP/1.1" (\d{3}) (\d+)'
 try:
     for line in sys.stdin:
+        if not match(regex, line):
+            continue
         file_size += int(line.split()[-1])
         code = line.split()[-2]
         counter += 1
