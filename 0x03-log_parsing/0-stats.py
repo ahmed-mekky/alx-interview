@@ -16,7 +16,8 @@ codes_dict = {
     "500": 0}
 file_size = 0
 counter = 0
-regex = r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \[([^]]+)\] "GET /projects/260 HTTP/1.1" (\d{3}) (\d+)'
+reg = r'(\d+\.\d+\.\d+\.\d+) - \[.*\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)'
+
 try:
     for line in sys.stdin:
         if not match(regex, line):
