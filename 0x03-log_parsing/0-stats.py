@@ -41,4 +41,5 @@ try:
                 print_stats()
 except KeyboardInterrupt:
     print_stats()
-    raise
+    sys.exit(0)
+print_stats()
