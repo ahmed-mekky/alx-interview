@@ -21,6 +21,7 @@ reg = r'(\d+\.\d+\.\d+\.\d+) - \[.*\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)'
 
 
 def print_stats():
+    """Prints the accumulated stats and resets the counters."""
     print(f'File size: {file_size}')
     for code in codes_dict.keys():
         print(f'{code}: {codes_dict[code]}')
