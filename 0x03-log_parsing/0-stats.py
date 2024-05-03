@@ -34,3 +34,4 @@ except KeyboardInterrupt:
     print(f'File size: {file_size}')
     for code in codes_dict.keys():
         print(f'{code}: {codes_dict[code]}')
+    sys.exit(0)
