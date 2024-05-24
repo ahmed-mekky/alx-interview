@@ -5,6 +5,10 @@ const args = process.argv.slice(2, 3);
 const fetchCharacterName = async (characterUrl) => {
   return new Promise((resolve, reject) => {
     request(characterUrl, (err, res, body) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
       const characterData = JSON.parse(body);
       resolve(characterData.name);
     });
@@ -12,6 +16,10 @@ const fetchCharacterName = async (characterUrl) => {
 };
 
 request(`https://swapi-api.alx-tools.com/api/films/${args}`, async (err, res, body) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
   const filmData = JSON.parse(body);
   const characters = filmData.characters;
   for (const characterUrl of characters) {
@@ -19,4 +27,3 @@ request(`https://swapi-api.alx-tools.com/api/films/${args}`, async (err, res, bo
     console.log(characterName);
   }
 });
-
