@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """Rotate 2D Matrix"""
 import copy
-from typing import List
 
 
-def rotate_2d_matrix(matrix: List):
+def rotate_2d_matrix(matrix):
     """rotates the matrix"""
     length = len(matrix)
     new_matrix = copy.deepcopy(matrix)
