@@ -6,6 +6,8 @@ def makeChange(coins, total):
     """main function"""
     if total <= 0:
         return 0
+    if not coins:
+        return -1
     coins = sorted(coins, reverse=True)
     coin = coins[0]
     n = 0
