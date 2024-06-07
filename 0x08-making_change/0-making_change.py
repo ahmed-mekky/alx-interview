@@ -11,7 +11,7 @@ def makeChange(coins, total):
     n = 0
     while True:
         if coin > total:
-            if coin == 0 or total == 0:
+            if total == 0:
                 return n
             elif coin is coins[-1]:
                 return -1
