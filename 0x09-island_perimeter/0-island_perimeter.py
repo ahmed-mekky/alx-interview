@@ -20,5 +20,5 @@ def island_perimeter(grid):
                     if not grid[i][j - 1]:
                         sum += 1
                 except IndexError:
-                    continue
+                    return None
     return sum
