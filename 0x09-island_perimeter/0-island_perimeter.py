@@ -1,29 +1,16 @@
 #!/usr/bin/python3
-"""island_perimeter"""
+"""island_sum"""
 
 
-def island_perimeter(grid):
+def island_sum(grid):
     """main func"""
     sum = 0
     for i in range(len(grid)):
         for j in range(len(grid[i])):
-            item = grid[i][j]
-            if item:
-                try:
-                    if i > 0:
-                        if not grid[i - 1][j]:
-                            sum += 1
-                    else:
-                        sum += 1
-                    if j > 0:
-                        if not grid[i][j - 1]:
-                            sum += 1
-                    else:
-                        sum += 1
-                    if not grid[i + 1][j]:
-                        sum += 1
-                    if not grid[i][j + 1]:
-                        sum += 1
-                except IndexError:
-                    sum += 1
+            if grid[i][j] == 1:
+                sum += 4
+                if i > 0 and grid[i - 1][j] == 1:
+                    sum -= 2
+                if j > 0 and grid[i][j - 1] == 1:
+                    sum -= 2
     return sum
