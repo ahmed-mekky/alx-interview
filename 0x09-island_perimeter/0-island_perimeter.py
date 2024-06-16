@@ -10,12 +10,15 @@ def island_perimeter(grid):
         for j in range(length):
             item = grid[i][j]
             if item:
-                if not grid[i - 1][j]:
-                    sum += 1
-                if not grid[i + 1][j]:
-                    sum += 1
-                if not grid[i][j + 1]:
-                    sum += 1
-                if not grid[i][j - 1]:
-                    sum += 1
+                try:
+                    if not grid[i - 1][j]:
+                        sum += 1
+                    if not grid[i + 1][j]:
+                        sum += 1
+                    if not grid[i][j + 1]:
+                        sum += 1
+                    if not grid[i][j - 1]:
+                        sum += 1
+                except IndexError:
+                    continue
     return sum
