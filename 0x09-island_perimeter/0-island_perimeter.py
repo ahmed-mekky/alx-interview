@@ -2,7 +2,7 @@
 """island_sum"""
 
 
-def island_sum(grid):
+def island_perimeter(grid):
     """main func"""
     sum = 0
     for i in range(len(grid)):
