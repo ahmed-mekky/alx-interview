@@ -13,6 +13,7 @@ Assuming Maria always goes first and both players play optimally,
 
 
 def isWinner(x, nums):
+    """isWinner func"""
     players = {'Maria': 0, 'Ben': 0}
     names = list(players.keys())
     for num in nums:
@@ -22,6 +23,7 @@ def isWinner(x, nums):
 
 
 def roundWinner(num):
+    """roundWinner func"""
     names = ['Maria', 'Ben']
     player = names[1]
     primes = getPrimes(num)
@@ -35,6 +37,7 @@ def roundWinner(num):
 
 
 def getPrimes(num):
+    """getPrimes func"""
     primes = []
     for i in range(2, num + 1):
         if checkPrime(i):
@@ -43,6 +46,7 @@ def getPrimes(num):
 
 
 def checkPrime(num):
+    """checkPrime func"""
     if num < 2:
         return False
     for i in range(2, int(num ** 0.5) + 1):
