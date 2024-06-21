@@ -14,6 +14,8 @@ Assuming Maria always goes first and both players play optimally,
 
 def isWinner(x, nums):
     """isWinner func"""
+    if x <= 0 or not nums:
+        return None
     players = {'Maria': 0, 'Ben': 0}
     names = list(players.keys())
     for num in nums:
