@@ -11,6 +11,7 @@ They play x rounds of the game,
 Assuming Maria always goes first and both players play optimally,
  determine who the winner of each"""
 
+
 def isWinner(x, nums):
     players = {'Maria': 0, 'Ben': 0}
     names = list(players.keys())
@@ -31,7 +32,6 @@ def roundWinner(num):
             continue
         return player
     return None
-
 
 
 def getPrimes(num):
