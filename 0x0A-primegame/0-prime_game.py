@@ -20,13 +20,16 @@ def isWinner(x, nums):
     names = list(players.keys())
     for num in nums:
         winner = roundWinner(num)
-        players[winner] += 1
+        if winner:
+            players[winner] += 1
     return max(players, key=players.get)
 
 
 def roundWinner(num):
     """roundWinner func"""
     names = ['Maria', 'Ben']
+    if num <= 0:
+        return None
     player = names[1]
     primes = getPrimes(num)
     for i in range(num):
